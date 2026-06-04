@@ -1,0 +1,134 @@
+/* Navbar.css - Styling for the Navigation Bar */
+
+/* Base navbar styles */
+.navbar {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Brand/Logo styling */
+.navbar__brand {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.navbar__brand:hover {
+  transform: scale(1.05);
+}
+
+/* Menu list styling */
+.navbar__menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu item styling */
+.navbar__item {
+  position: relative;
+}
+
+/* Link styling */
+.navbar__link {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Hover effect for links */
+.navbar__link:hover {
+  color: #a78bfa;
+  transform: translateY(-2px);
+}
+
+/* Underline animation */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* Active link styling */
+.navbar__item.active .navbar__link {
+  color: #a78bfa;
+}
+
+.navbar__item.active .navbar__link::after {
+  width: 100%;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .navbar__menu {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar__brand {
+    font-size: 1.3rem;
+  }
+
+  .navbar__link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .navbar__menu {
+    gap: 1rem;
+  }
+
+  .navbar__link {
+    font-size: 0.8rem;
+  }
+
+  .navbar__brand {
+    font-size: 1.1rem;
+  }
+}
+
+/* Scroll effect - optional (adds shadow when scrolling) */
+.navbar.scrolled {
+  background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
